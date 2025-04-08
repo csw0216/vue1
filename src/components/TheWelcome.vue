@@ -6,6 +6,16 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
+// 使用网络请求封装的接口
+import api from "../api/index"
+// import { ref, onMounted } from "vue"
+
+mounted(()=>{
+  api.getPath().then(res=>{
+    console.log(res.data);
+  })
+})
+
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
